@@ -7,11 +7,11 @@ import { updateCategories } from '../../utils';
 
 afterEach(jest.clearAllMocks);
 
-jest.mock('../../hooks/useCurrentTime.ts', () => ({
+jest.mock('../../hooks/useCurrentTime', () => ({
     useCurrentTime: () => '00:00:00',
 }));
 
-jest.mock('../../utils/updateCategories.ts', () => ({
+jest.mock('../../utils/updateCategories', () => ({
     updateCategories: jest.fn(),
 }));
 

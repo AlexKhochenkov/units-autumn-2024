@@ -12,6 +12,9 @@ class TestCalculator(unittest.TestCase):
         self.assertEqual(self.calculator.addition(1, 2), 3)
         self.assertEqual(self.calculator.addition(1, 1), 2)
 
+    def test_addition_string(self):
+        self.assertEqual(self.calculator.addition('a','b'),'ab')
+
     def test_addition_negative(self):
         self.assertEqual(self.calculator.addition(-1, -1), -2)
         self.assertEqual(self.calculator.addition(-1, -2), -3)
@@ -56,6 +59,9 @@ class TestCalculator(unittest.TestCase):
         self.assertEqual(self.calculator.multiplication(2, 3), 6)
         self.assertEqual(self.calculator.multiplication(2, 1), 2)
 
+    def test_multiplication_string(self):
+        self.assertEqual(self.calculator.multiplication('a', 3),'aaa')
+
     def test_multiplication_zero(self):
         self.assertEqual(self.calculator.multiplication(2, 0), 0)
         self.assertEqual(self.calculator.multiplication(0, 0), 0)
@@ -76,6 +82,9 @@ class TestCalculator(unittest.TestCase):
         self.assertEqual(self.calculator.division(4, 2), 2)
         self.assertEqual(self.calculator.division(4, 1), 4)
         self.assertEqual(self.calculator.division(0, 2), 0)
+
+    def test_division_period(self):
+        self.assertAlmostEqual(self.calculator.division(1, 3), 0.3333333333)
 
     def test_division_negative(self):
         self.assertEqual(self.calculator.division(4, -2), -2)
